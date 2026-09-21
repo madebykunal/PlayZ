@@ -1,0 +1,335 @@
+/* variables.css */
+:root {
+  /* Color Palette */
+  --primary-color: #e8f046;
+  --primary-hover: #d9e12e;
+  --background-color: #181a20;
+  --card-background: #2a2a2a;
+  --text-color: #ffffff;
+
+  /* Navigation */
+  --nav-bg: rgba(32, 34, 42, 0.95);
+  --nav-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+
+  /* Typography */
+  --font-heading: 'Oswald', sans-serif;
+  --font-body: 'Montserrat', sans-serif;
+
+  /* Transitions & Animation */
+  --transition-speed: 0.3s;
+}
+
+/* reset.css */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-heading);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* global.css */
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+@media (max-width: 992px) {
+  .container {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 8px;
+  }
+}
+
+/* Navbar.module.css */
+.navContainer {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--background-color);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  width: 100%;
+}
+
+.navWrapper {
+  position: relative;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto 20px;
+}
+
+.navButtons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 1.25rem 2rem;
+  position: relative;
+  width: 100%;
+  background-color: var(--nav-bg);
+  border-radius: 0 0 16px 16px;
+  box-shadow: var(--nav-shadow);
+  transition:
+    transform var(--transition-speed) ease,
+    box-shadow var(--transition-speed) ease;
+}
+
+.navIndicator {
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--primary-color),
+    transparent
+  );
+  opacity: 0.7;
+}
+
+.leftSection {
+  flex: 1;
+  min-width: 80px;
+}
+
+.rightSection {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-width: 30px;
+}
+
+/* Logo */
+.logo {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.logoTitle {
+  font-weight: 700;
+  letter-spacing: 2px;
+  position: relative;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(to right, #fff, #f0f0f0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.3));
+  font-size: clamp(1.2rem, 4vw, 2rem);
+  white-space: nowrap;
+}
+
+.highlight {
+  color: var(--primary-color);
+  position: relative;
+  display: inline-block;
+  transform: scale(1.2);
+  transition: all var(--transition-speed) ease;
+  -webkit-text-fill-color: var(--primary-color);
+  text-shadow: 0 0 10px rgba(232, 240, 70, 0.5);
+}
+
+.highlight:hover {
+  transform: scale(1.4) rotate(5deg);
+  text-shadow: 0 0 15px rgba(232, 240, 70, 0.7);
+}
+
+/* GitHub Link */
+.githubLink {
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 50%;
+  transition: all var(--transition-speed) ease;
+  text-decoration: none;
+}
+
+.githubLink:hover {
+  color: var(--primary-color);
+  transform: translateY(-2px) scale(1.1);
+  filter: drop-shadow(0 0 8px rgba(232, 240, 70, 0.5));
+}
+
+.githubLink:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 4px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .navButtons {
+    padding: 1rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navWrapper {
+    margin-bottom: 15px;
+  }
+
+  .navButtons {
+    border-radius: 0 0 12px 12px;
+  }
+
+  .navIndicator {
+    width: 70%;
+  }
+}
+
+@media (max-width: 480px) {
+  .navButtons {
+    padding: 0.7rem 0.5rem;
+    gap: 10px;
+  }
+}
+
+@media (hover: none) {
+  .highlight:hover {
+    transform: scale(1.2);
+    text-shadow: 0 0 10px rgba(232, 240, 70, 0.5);
+  }
+
+  .githubLink:hover {
+    transform: none;
+  }
+}
+
+/* GameGrid.module.css */
+.gameGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr));
+  gap: clamp(15px, 3vw, 30px);
+  margin-top: clamp(40px, 6vh, 60px);
+  margin-bottom: clamp(20px, 3vh, 30px);
+}
+
+@media (max-width: 768px) {
+  .gameGrid {
+    grid-template-columns: repeat(auto-fill, minmax(min(180px, 100%), 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .gameGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
+/* GameCard.module.css */
+.gameCard {
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  background-color: var(--card-background);
+  transition:
+    transform var(--transition-speed) ease,
+    box-shadow var(--transition-speed) ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+.gameCard:focus-visible {
+  box-shadow:
+    0 0 0 3px var(--primary-color),
+    0 10px 25px rgba(232, 240, 70, 0.25);
+  transform: translateY(-5px);
+}
+
+.gameCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(232, 240, 70, 0.15);
+}
+
+.gamePlaceholder {
+  width: 100%;
+  height: 100%;
+}
+
+.gameImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-speed) ease;
+  display: block;
+}
+
+.gameCard:hover .gameImage {
+  transform: scale(1.05);
+}
+
+.gameCanvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Touch Device Optimization */
+@media (hover: none) {
+  .gameCard:hover {
+    transform: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .gameCard:hover .gameImage {
+    transform: none;
+  }
+
+  .gameCard:active {
+    transform: translateY(-3px);
+  }
+}
