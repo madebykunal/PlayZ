@@ -64,4 +64,4 @@ Have a game idea or made a game with AI?
 
 This project is open-source and available under the [MIT License](LICENSE).
 
-Crafted with ❤️ by [Kunal Creates](https://github.com/madebykunal)
+Crafted with ❤️ by [Kunal](https://github.com/madebykunal)
