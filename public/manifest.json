@@ -31,25 +31,25 @@
   ],
   "icons": [
     {
-      "src": "Images/Favicon.png",
+      "src": "/favicon.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "Images/Favicon.png",
+      "src": "/favicon.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "Images/Favicon.png",
+      "src": "/favicon.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "Images/Favicon.png",
+      "src": "/favicon.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
@@ -66,14 +66,14 @@
   "dir": "ltr",
   "screenshots": [
     {
-      "src": "Images/Tetris.webp",
+      "src": "/images/tetris.webp",
       "sizes": "1280x720",
       "type": "image/webp",
       "platform": "wide",
       "label": "Tetris gameplay in PlayZ"
     },
     {
-      "src": "Images/chess.webp",
+      "src": "/images/chess.webp",
       "sizes": "1280x720",
       "type": "image/webp",
       "platform": "wide",
