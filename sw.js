@@ -5,23 +5,22 @@ const BASE_URL = 'https://playz.pages.dev';
 // List of resources that would be cached in production
 // Currently not being used during development
 const urlsToCache = [
-  `${BASE_URL}/`,
-  `${BASE_URL}/index.html`,
-  `${BASE_URL}/about.html`,
-  `${BASE_URL}/styles.css`,
-  `${BASE_URL}/script.js`,
-  `${BASE_URL}/Images/Favicon.png`,
-  '/Images/Bloom.webp',
-  '/Images/broken-platform.webp',
-  '/Images/chess.webp',
-  '/Images/classical-snake.webp',
-  '/Images/color-chaser.webp',
-  '/Images/Dodger.webp',
-  '/Images/Pixel-Runner.webp',
-  '/Images/Tetris.webp',
-  '/Images/tic-tac-toe.webp',
-  '/Images/truck-tunk.webp',
-  '/Images/Whack-a-Hole.webp'
+  '/',
+  '/index.html',
+  '/favicon.png',
+  '/manifest.json',
+  '/images/bloom.webp',
+  '/images/broken-platform.webp',
+  '/images/chess.webp',
+  '/images/classical-snake.webp',
+  '/images/color-chaser.webp',
+  '/images/dodger.webp',
+  '/images/pixel-runner.webp',
+  '/images/sudoku.webp',
+  '/images/tetris.webp',
+  '/images/tic-tac-toe.webp',
+  '/images/truck-tunk.webp',
+  '/images/whack-a-hole.webp'
 ];
 
 // Skip caching during installation
