@@ -8,58 +8,45 @@ An open-source browser gaming hub featuring quick, fun web games crafted with mo
 
 ## ⚡ Tech Stack
 
-- **Framework:** React 18 + Vite
-- **Styling:** CSS3 (responsive, modern dark UI)
+- **Framework:** Vanilla HTML, CSS, and JavaScript
+- **Styling:** Custom CSS3 (responsive, modern dark UI)
 - **Deployment:** Cloudflare Pages
 
 ---
 
 ## 🚀 Getting Started
 
-### Prerequisites
-Make sure you have [Node.js](https://nodejs.org/) installed (v18+ recommended).
+This project is built purely with Vanilla HTML, CSS, and JS, meaning there is no build step required!
 
 ### Installation & Development
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/kunal-creates/PlayZ.git
+git clone https://github.com/madebykunal/PlayZ.git
 cd PlayZ
 
-# 2. Install dependencies
-npm install
-
-# 3. Start local development server
-npm run dev
+# 2. Start a local server (e.g., using Python, Node, or VS Code Live Server)
+python3 -m http.server
+# OR
+npx serve
 ```
 
-Visit `http://localhost:3000` in your browser.
-
-### Build for Production
-
-```bash
-npm run build
-```
-
-The output will be in the `dist/` directory ready for deployment.
+Visit the local server address (e.g., `http://localhost:8000`) in your browser.
 
 ---
 
 ## 🕹️ Adding a New Game
 
-1. Place your game files (HTML, CSS, JS) inside `public/games/<game-name>/`.
-2. Add a thumbnail image (`.webp` or `.png`) into `public/images/`.
-3. Register your game in [`src/data/games.js`](src/data/games.js):
+1. Place your game files (HTML, CSS, JS) inside `game/<game-name>/`.
+2. Add a thumbnail image (`.webp` or `.png`) into `images/`.
+3. Register your game in [`js/data.js`](js/data.js):
 
 ```javascript
 {
   id: 'your-game',
   title: 'Your Game Title',
-  category: 'Arcade',
-  image: '/images/your-game.webp',
-  path: '/games/your-game/index.html',
-  description: 'Short description of your game.',
-  tags: ['Classic', 'Fun']
+  thumbnail: './images/your-game.webp',
+  route: './game/your-game/index.html'
 }
 ```
 
@@ -68,7 +55,7 @@ The output will be in the `dist/` directory ready for deployment.
 ## 📬 Submit a Game
 
 Have a game idea or made a game with AI?
-- Open an [Issue / Game Request](https://github.com/kunal-creates/PlayZ/issues/new)
+- Open an [Issue / Game Request](https://github.com/madebykunal/PlayZ/issues/new)
 - Or email your game files to: **madebykunal@gmail.com**
 
 ---
@@ -77,4 +64,4 @@ Have a game idea or made a game with AI?
 
 This project is open-source and available under the [MIT License](LICENSE).
 
-Crafted with ❤️ by [Kunal Creates](https://github.com/kunal-creates)
+Crafted with ❤️ by [Kunal Creates](https://github.com/madebykunal)
