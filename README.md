@@ -1,86 +1,80 @@
 # 🎮 PlayZ
 
-**Your Gateway to Open-Source Gaming**
+An open-source browser gaming hub featuring quick, fun web games crafted with modern web technologies and AI assistance.
 
-Welcome to **PlayZ**, an independent and open-source gaming platform designed to bring your favorite games to life. Whether you're a solo player or looking to team up, PlayZ offers a seamless gaming experience right in your browser.
-
----
-
-## 🚀 Features
-
-- **Diverse Game Library**: From classic games to modern favorites, explore a wide range of games.
-- **User-Centric Design**: Intuitive interface ensuring an enjoyable gaming experience.
-- **Responsive Layout**: Play anytime, anywhere, on any device.
-- **Open-Source**: Fully transparent and community-driven development.
+🌐 **Live Demo:** [playz.pages.dev](https://playz.pages.dev)
 
 ---
 
-## 🧠 About PlayZ
+## ⚡ Tech Stack
 
-PlayZ is more than just a gaming platform; it's a community initiative.  
-This entire website has been **designed and developed independently** by [Kunal Creates](https://github.com/kunal-creates), while the games have been crafted using **AI-generated code and tools**.
-
-Our goal is to:
-- Provide accessible gaming experiences to everyone.
-- Encourage exploration of game development using AI.
-- Foster a space where creators, learners, and enthusiasts can contribute and collaborate.
+- **Framework:** React 18 + Vite
+- **Styling:** CSS3 (responsive, modern dark UI)
+- **Deployment:** Cloudflare Pages
 
 ---
 
-## 📬 Request or Submit Your Game
+## 🚀 Getting Started
 
-Have a game idea? Or created one with AI? We'd love to showcase it on PlayZ!
+### Prerequisites
+Make sure you have [Node.js](https://nodejs.org/) installed (v18+ recommended).
 
-### 🎯 Two Easy Ways to Get Your Game Online:
-1. **Request a Game**  
-   👉 [Submit a game request](https://github.com/kunal-creates/PlayZ/issues/new?template=game_request.md)
+### Installation & Development
 
-2. **Submit Your Game File**  
-   Send your game HTML/JS file (or playable build) via email to:  
-   📧 **madebykunal@gmail.com**
+```bash
+# 1. Clone the repository
+git clone https://github.com/kunal-creates/PlayZ.git
+cd PlayZ
 
-If it meets the platform’s spirit and quality, your game will be featured on the PlayZ website!
+# 2. Install dependencies
+npm install
+
+# 3. Start local development server
+npm run dev
+```
+
+Visit `http://localhost:3000` in your browser.
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+The output will be in the `dist/` directory ready for deployment.
 
 ---
 
-## 🤖 For AI Enthusiasts & Newcomers
+## 🕹️ Adding a New Game
 
-Are you learning AI or experimenting with tools like ChatGPT, GitHub Copilot, or other AI game generators?  
-PlayZ is the perfect place to:
+1. Place your game files (HTML, CSS, JS) inside `public/games/<game-name>/`.
+2. Add a thumbnail image (`.webp` or `.png`) into `public/images/`.
+3. Register your game in [`src/data/games.js`](src/data/games.js):
 
-- Showcase your AI-generated games.
-- Learn how to build simple, browser-friendly games.
-- Join a growing community of AI + Web enthusiasts.
-
-💡 *New to coding or AI? Try building a small game and send it in — it could be your first step into open-source contribution!*
+```javascript
+{
+  id: 'your-game',
+  title: 'Your Game Title',
+  category: 'Arcade',
+  image: '/images/your-game.webp',
+  path: '/games/your-game/index.html',
+  description: 'Short description of your game.',
+  tags: ['Classic', 'Fun']
+}
+```
 
 ---
 
-## 🛠️ Contributing
+## 📬 Submit a Game
 
-We welcome contributions from developers, designers, and enthusiasts alike. To get started:
-
-1. Fork the repository.
-2. Create a new branch: `git checkout -b feature/YourFeature`
-3. Commit your changes: `git commit -m 'Add YourFeature'`
-4. Push to the branch: `git push origin feature/YourFeature`
-5. Open a pull request.
-
-For detailed guidelines, please refer to our [CONTRIBUTING.md](CONTRIBUTING.md).
+Have a game idea or made a game with AI?
+- Open an [Issue / Game Request](https://github.com/kunal-creates/PlayZ/issues/new)
+- Or email your game files to: **madebykunal@gmail.com**
 
 ---
 
 ## 📄 License
 
-This project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute as per the license terms.
+This project is open-source and available under the [MIT License](LICENSE).
 
----
-
-## 🌐 Live Demo
-
-Experience PlayZ in action:  
-🔗 **https://playz.pages.dev**
-
----
-
-*Crafted with ❤️ by [Kunal Creates](https://github.com/kunal-creates)*
+Crafted with ❤️ by [Kunal Creates](https://github.com/kunal-creates)

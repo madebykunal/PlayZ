@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Bloom</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../common/game-shell.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-game-title="Bloom">
+    <div class="game-container playz-game-box">
+        <div class="ui-panel">
+            <div class="level">Level: <span id="level-value">1</span></div>
+            <div class="score">Score: <span id="score-value">0</span></div>
+            <div class="clicks">Clicks: <span id="clicks-value">0</span></div>
+        </div>
+        <div id="game-grid" class="game-grid">
+            </div>
+
+        <div id="start-screen" class="game-screen">
+            <h1>Pixel Bloom</h1>
+            <button id="start-button">Start Game</button>
+        </div>
+
+        <div id="game-over-screen" class="game-screen hidden">
+            <h1 id="game-over-title">Level Complete!</h1>
+            <p>Score: <span id="final-score-value">0</span></p>
+            <button id="next-level-button">Next Level</button>
+            <button id="restart-button" class="hidden">Play Again</button>
+        </div>
+    </div>
+
+    <script src="../common/game-shell.js" defer></script>
+    <script src="script.js" defer></script>
+</body>
+</html>

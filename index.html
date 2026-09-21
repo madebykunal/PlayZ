@@ -5,64 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#000000">
     <title>PlayZ</title>
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="/manifest.json">
     <!-- iOS support -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="PlayZ">
-    <link rel="apple-touch-icon" href="Images/Favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
     <!-- Preload fonts for faster rendering -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Montserrat:wght@500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Montserrat:wght@500;600;700&display=swap"></noscript>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="Images/Favicon.png" type="image/png">
-    <link rel="shortcut icon" type="image/png" href="Favicon.png">
+    <link rel="icon" href="/favicon.png" type="image/png">
 </head>
 <body>
-    <div class="container">
-        <!-- Navigation Header -->
-        <header class="nav-container">
-            <div class="nav-wrapper">
-                <div class="nav-buttons">
-                    <div class="left-section">
-                        <div class="logo">
-                            <h1>Play<span class="highlight">Z</span></h1>
-                        </div>
-                    </div>
-                    <div class="center-section">
-                        <button class="nav-btn active" data-type="single">Solo</button>
-                        <button class="nav-btn" data-type="multi">Duo</button>
-                    </div>
-                    <div class="right-section">
-                        <button class="hamburger" aria-label="Menu">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </button>
-                    </div>
-                </div>
-                <div class="nav-indicator"></div>
-            </div>
-        </header>
-    
-        <!-- Full Screen Menu -->
-        <div class="fullscreen-menu" role="dialog" aria-hidden="true">
-            <nav>
-                <ul>
-                    <li><a href="https://playz.pages.dev/index.html">Home</a></li>
-                    <li><a href="https://playz.pages.dev/about.html">About Us</a></li>
-                </ul>
-            </nav>
-        </div>
-
-        <!-- Game Grid -->
-        <main>
-            <div class="game-grid">
-                <!-- Games will be populated by JavaScript -->
-            </div>
-        </main>
-    </div>
-
-    <script src="script.js" defer></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>

@@ -1,0 +1,174 @@
+/* Custom CSS for pixelated look and game specifics */
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #181a20;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .game-container {
+            background-color: #333;
+            padding: 24px;
+            border: 3px solid #555;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            border-radius: 12px;
+            width: min(92vw, 480px);
+            min-height: 520px;
+            box-sizing: border-box;
+        }
+
+        .game-board {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px; /* Gap between holes */
+            margin-top: 20px;
+        }
+
+        .hole {
+            width: 100%; /* Make holes fill their grid cell */
+            padding-bottom: 100%; /* Maintain aspect ratio (1:1) */
+            position: relative;
+            background-color: #8FBC8F; /* Greenish-grey color from image */
+            border: 3px solid #000; /* Black border */
+            box-sizing: border-box; /* Include border in size */
+            overflow: hidden; /* Hide mole when not active */
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><text x="0" y="28" font-size="32">🔨</text></svg>'), auto; /* Hammer cursor */
+            transition: background-color 0.1s ease-in-out; /* Smooth transition for color change */
+        }
+
+        /* New class for hit feedback */
+        .hole.hit {
+            background-color: #800000; /* Maroon color */
+        }
+
+
+        .mole {
+            position: absolute;
+            bottom: 0; /* Position at the bottom of the hole */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%; /* Size of the mole relative to the hole */
+            height: 80%; /* Adjust height to fit character */
+            display: none; /* Initially hidden */
+            /* Added styles for the pixelated character */
+            background-color: transparent; /* No background color needed for SVG */
+            overflow: hidden; /* Ensure character stays within hole bounds */
+        }
+
+        .hole.active .mole {
+            display: flex; /* Use flexbox to center SVG */
+            justify-content: center;
+            align-items: flex-end; /* Align character to the bottom */
+        }
+
+        .mole svg {
+            width: 100%;
+            height: 100%;
+            display: block; /* Remove extra space below SVG */
+        }
+
+        .controls {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap; /* Allow controls to wrap on smaller screens */
+            align-items: center; /* Vertically align items */
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            border: 3px solid #000; /* Black border */
+            box-shadow: 4px 4px 0px #000; /* Pixelated shadow */
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:active {
+            box-shadow: none; /* Remove shadow on click */
+            transform: translate(4px, 4px); /* Simulate button press */
+        }
+
+        .score-board {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .message-box {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            border: 3px solid #000;
+            border-radius: 5px;
+            min-height: 1.5em; /* Ensure space even when empty */
+        }
+
+        .difficulty-select {
+            font-family: 'Press Start 2P', cursive;
+            padding: 8px;
+            border-radius: 5px;
+            border: 3px solid #000;
+            background-color: #fff;
+            color: #000;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .game-container {
+                padding: 10px;
+            }
+
+            .game-board {
+                gap: 5px;
+            }
+
+            button {
+                padding: 8px 15px;
+                font-size: 0.8rem;
+            }
+
+            .score-board {
+                font-size: 1rem;
+            }
+
+            .difficulty-select {
+                font-size: 0.8rem;
+            }
+        }
+            .back-button {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 20px;
+        z-index: 9999;
+    }
+    
+    .back-button a {
+        color: white;
+        text-decoration: none;
+        font-family: system-ui, -apple-system, sans-serif;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+    }
+    
+    .back-button:hover {
+        background-color: rgba(0, 0, 0, 0.9);
+    }
