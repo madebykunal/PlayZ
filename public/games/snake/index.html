@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Classic Snake 🐍</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../common/game-shell.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-game-title="Classic Snake">
+    <div class="playz-game-box" id="snake-box">
+        <div id="score-display">Score: 0</div>
+        <div id="game-container">
+            <canvas id="gameCanvas"></canvas>
+            <div id="ui-layer">
+                <div id="start-screen" class="message-box" style="display: flex;"> <h2 class="welcome">Welcome!</h2>
+                    <p>Use Arrow Keys or Tap Controls. Eat 🍎 to grow!</p>
+                    <button id="startButton" class="game-button">Start</button>
+                </div>
+                <div id="game-over-screen" class="message-box">
+                    <h2>Game Over!</h2>
+                    <p>Score: <span id="final-score">0</span></p>
+                    <button id="restartButton" class="game-button">Restart</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="touch-controls">
+            <div class="empty-cell"></div> <button class="control-button" id="btn-up">▲</button> <div class="empty-cell"></div>
+            <button class="control-button" id="btn-left">◄</button>
+            <button class="control-button" id="btn-down">▼</button>
+            <button class="control-button" id="btn-right">►</button>
+        </div>
+    </div>
+
+    <script src="../common/game-shell.js" defer></script>
+    <script src="script.js" defer></script>
+</body>
+</html>

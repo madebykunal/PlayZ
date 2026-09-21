@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Broken Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.58/Tone.js"></script>
+    <link rel="stylesheet" href="../common/game-shell.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-game-title="Broken Platform">
+    <div id="game-container" class="playz-game-box">
+        <div id="start-screen">
+            <h1>Broken Platform</h1>
+            <button class="game-button" id="single-player-btn">Single Player</button>
+            <button class="game-button" id="two-player-btn">Two Player</button>
+        </div>
+
+        <canvas id="gameCanvas"></canvas>
+        <div id="game-info">Use Arrow Keys (P1) and WASD (P2) to move</div>
+
+        <button class="game-button hidden" id="in-game-menu-button">Main Menu</button>
+
+        <div id="game-over-screen" class="hidden">
+            <h2>Game Over!</h2>
+            <p id="winner-info"></p>
+            <button class="game-button" id="game-over-main-menu-button">Main Menu</button>
+        </div>
+
+        <div id="mobile-controls-container">
+            <div id="player1-mobile-controls">
+                <div class="control-row">
+                    <button class="control-button" data-player="1" data-direction="up">▲</button>
+                </div>
+                <div class="control-row">
+                    <button class="control-button" data-player="1" data-direction="left">◀</button>
+                    <button class="control-button" data-player="1" data-direction="down">▼</button>
+                    <button class="control-button" data-player="1" data-direction="right">▶</button>
+                </div>
+            </div>
+            <div id="player2-mobile-controls" class="hidden"> 
+                <div class="control-row">
+                    <button class="control-button" data-player="2" data-direction="up">▲</button>
+                </div>
+                <div class="control-row">
+                    <button class="control-button" data-player="2" data-direction="left">◀</button>
+                    <button class="control-button" data-player="2" data-direction="down">▼</button>
+                    <button class="control-button" data-player="2" data-direction="right">▶</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../common/game-shell.js" defer></script>
+    <script src="script.js"></script>
+</body>
+</html>

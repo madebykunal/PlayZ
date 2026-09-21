@@ -1,0 +1,483 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Press Start 2P', monospace;
+    background: #181a20;
+    color: #d4af37;
+    margin: 0;
+    padding: 0;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+.container {
+    width: 100%;
+    max-width: 850px;
+    background: #3d2a00;
+    border: 3px solid #d4af37;
+    border-style: solid;
+    box-shadow: 
+        inset 2px 2px 0 #f4d03f,
+        inset -2px -2px 0 #8b4513,
+        4px 4px 0 #1a0d00;
+    padding: 16px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 16px;
+    min-height: 520px;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.left-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.header {
+    text-align: center;
+}
+
+.title {
+    font-size: 24px;
+    margin-bottom: 16px;
+    color: #d4af37;
+    text-shadow: 2px 2px 0 #8b4513;
+    letter-spacing: 4px;
+}
+
+.level-display {
+    background: #2d1b00;
+    border: 2px solid #d4af37;
+    border-style: inset;
+    padding: 12px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.level-label {
+    font-size: 8px;
+    color: #cd853f;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+}
+
+.level-value {
+    font-size: 20px;
+    color: #ffd700;
+    text-shadow: 1px 1px 0 #8b4513;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 16px;
+    font-family: inherit;
+    font-size: 10px;
+    cursor: pointer;
+    border: 2px solid;
+    transition: all 0.1s ease;
+    text-decoration: none;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.btn:active {
+    transform: translate(1px, 1px);
+}
+
+.btn.primary {
+    background: #228b22;
+    color: #ffffff;
+    border-color: #32cd32;
+    box-shadow: 2px 2px 0 #006400;
+}
+
+.btn.primary:hover {
+    background: #32cd32;
+}
+
+.btn.secondary {
+    background: #4169e1;
+    color: #ffffff;
+    border-color: #6495ed;
+    box-shadow: 2px 2px 0 #191970;
+}
+
+.btn.secondary:hover {
+    background: #6495ed;
+}
+
+.btn.hint {
+    background: #ff8c00;
+    color: #ffffff;
+    border-color: #ffa500;
+    box-shadow: 2px 2px 0 #ff4500;
+}
+
+.btn.hint:hover {
+    background: #ffa500;
+}
+
+.game-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.info-card {
+    background: #2d1b00;
+    border: 2px solid #d4af37;
+    border-style: inset;
+    padding: 12px;
+    text-align: center;
+}
+
+.info-label {
+    font-size: 8px;
+    color: #cd853f;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.info-value {
+    font-size: 16px;
+    color: #ffd700;
+    text-shadow: 1px 1px 0 #8b4513;
+}
+
+.right-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center; /* Vertically center in desktop */
+    align-items: center; /* Center horizontally */
+}
+
+.sudoku-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 5px 0;
+    margin: 0 auto;
+}
+
+.sudoku-grid {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 2px;
+    background: #8b4513;
+    border: 4px solid #d4af37;
+    border-style: outset;
+    padding: 4px;
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1;
+}
+
+.cell {
+    background: #f5deb3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: normal;
+    cursor: pointer;
+    color: #2d1b00;
+    border: 1px solid #deb887;
+    transition: all 0.1s ease;
+    position: relative;
+}
+
+.cell:hover {
+    background: #ffe4b5;
+}
+
+.cell.selected {
+    background: #ffd700;
+    color: #2d1b00;
+    border-color: #ff8c00;
+    box-shadow: inset 0 0 0 2px #ff8c00;
+}
+
+.cell.fixed {
+    background: #daa520;
+    color: #2d1b00;
+    cursor: not-allowed;
+    font-weight: bold;
+}
+
+.cell.wrong {
+    background: #ff6b6b;
+    color: #ffffff;
+    animation: flash 0.3s ease;
+}
+
+.cell.partial {
+    background: #ffd93d;
+    color: #2d1b00;
+}
+
+.cell.correct {
+    background: #6bcf7f;
+    color: #2d1b00;
+}
+
+@keyframes flash {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.number-pad {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto; /* Center horizontally */
+}
+
+.num-btn {
+    background: #8b4513;
+    color: #f5deb3;
+    border: 2px solid #d4af37;
+    border-style: outset;
+    padding: 12px;
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.num-btn:hover {
+    background: #a0522d;
+}
+
+.num-btn:active {
+    border-style: inset;
+    transform: translate(1px, 1px);
+}
+
+.clear-btn {
+    background: #dc143c;
+    color: #ffffff;
+    border-color: #ff1493;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.clear-btn:hover {
+    background: #ff1493;
+}
+
+/* Mobile Responsive */
+@media (max-width: 767px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        max-height: none;
+        padding: 10px;
+    }
+    
+    .right-panel {
+        /* Reset desktop styles for mobile */
+        justify-content: flex-start;
+    }
+
+    .title {
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+
+    .controls {
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    .btn {
+        flex: 1;
+        padding: 8px;
+        font-size: 8px;
+    }
+
+    .game-info {
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    .info-card {
+        flex: 1;
+        padding: 8px;
+    }
+
+    .info-value {
+        font-size: 12px;
+    }
+
+    .level-display {
+        margin-bottom: 12px;
+        padding: 8px;
+    }
+
+    .level-value {
+        font-size: 16px;
+    }
+
+    .sudoku-grid {
+        max-width: 320px;
+    }
+
+    .cell {
+        font-size: 14px;
+    }
+
+    .number-pad {
+        max-width: 320px;
+        gap: 6px;
+        margin: 0 auto;
+    }
+
+    .num-btn {
+        padding: 8px;
+        font-size: 12px;
+        min-height: 40px;
+    }
+
+    .clear-btn {
+        font-size: 8px;
+    }
+    .sudoku-container {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 6px;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .title {
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+
+    .sudoku-grid {
+        max-width: 280px;
+    }
+
+    .cell {
+        font-size: 12px;
+    }
+
+    .number-pad {
+        max-width: 280px;
+        gap: 4px;
+        margin: 0 auto;
+    }
+
+    .num-btn {
+        padding: 6px;
+        font-size: 10px;
+        min-height: 36px;
+    }
+
+    .info-value {
+        font-size: 10px;
+    }
+
+    .level-value {
+        font-size: 14px;
+    }
+    .sudoku-container {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 360px) {
+    .container {
+        padding: 4px;
+        min-height: 100vh;
+        height: auto;
+    }
+    
+    .sudoku-grid {
+        max-width: 250px;
+    }
+
+    .number-pad {
+        max-width: 250px;
+        margin: 0 auto;
+    }
+
+    .cell {
+        font-size: 11px;
+    }
+
+    .num-btn {
+        font-size: 9px;
+        min-height: 32px;
+    }
+    
+    .sudoku-container {
+        margin: 0 auto;
+        padding: 0;
+    }
+    
+    .right-panel {
+        gap: 5px;
+    }
+    
+    .left-panel {
+        gap: 5px;
+    }
+    
+    .level-display {
+        margin-bottom: 4px;
+        padding: 4px;
+    }
+    
+    .title {
+        margin-bottom: 4px;
+        font-size: 12px;
+    }
+    
+    .controls {
+        gap: 3px;
+    }
+    
+    .header {
+        margin-bottom: 0;
+    }
+    
+    .game-info {
+        gap: 5px;
+    }
+    
+    .info-card {
+        padding: 4px;
+    }
+    
+    body {
+        padding: 4px;
+    }
+}
